@@ -1,0 +1,25 @@
+{
+  "name": "strong-heroku-runner",
+  "version": "1.0.0",
+  "description": "Heroku executor for StrongLoop Mesh",
+  "bin": {
+    "sl-run": "./bin/sl-run.js"
+  },
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore . && jscs .",
+    "test": "tap --coverage --bail --coverage-report=cobertura --timeout=200 test/test-*.*",
+    "posttest": "nyc report --reporter=lcov && nyc report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongloop/strong-heroku-runner.git"
+  },
+  "author": "Strongloop <engineering@strongloop.com>",
+  "license": "LicenseRef-LICENSE.md",
+  "homepage": "https://github.com/strongloop/strong-heroku-runner#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "strong-control-channel": "^2.x",
+    "strong-supervisor": "git://github.com/strongloop/strong-supervisor.git#spike/heroku"
+  }
+}
