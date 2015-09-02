@@ -8,7 +8,7 @@
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore . && jscs .",
     "test": "tap --coverage --bail --coverage-report=cobertura --timeout=200 test/test-*.*",
-    "posttest": "nyc report --reporter=lcov && nyc report"
+    "posttest": "tap --coverage-report=text"
   },
   "repository": {
     "type": "git",
