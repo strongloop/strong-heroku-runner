@@ -21,5 +21,9 @@
     "debug": "^2.2.0",
     "strong-control-channel": "^2.x",
     "strong-supervisor": "git://github.com/strongloop/strong-supervisor.git#spike/heroku"
+  },
+  "devDependencies": {
+    "eslint": "^1.3.1",
+    "jscs": "^2.1.1"
   }
 }
