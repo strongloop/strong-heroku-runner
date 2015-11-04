@@ -20,13 +20,13 @@ MockWebsocketChannel.prototype.request = function(msg, cb) {
   this.msgs.push(msg);
   if (msg.cmd === 'register-container') {
     cb({
-      controlUri: ''
+      controlUri: '',
     });
   }
-}
+};
 
 MockWebsocketChannel.prototype.close = function() {
-}
+};
 
 var MockWebsocketChannelModule = {
   connect: function connect(_, registrationUrl) {
@@ -35,8 +35,8 @@ var MockWebsocketChannelModule = {
         new MockWebsocketChannel(_, registrationUrl);
     }
     return MockWebsocketChannelModule.ch;
-  }
-}
+  },
+};
 
 test('Test bluemix integration', function(t) {
   process.env.VCAP_SERVICES = JSON.stringify({
@@ -50,10 +50,10 @@ test('Test bluemix integration', function(t) {
           STRONGLOOP_ADDON_INFO:
             'eyJyZWdpc3RyYXRpb25VcmwiOiJodHRwczovL2JsdWVtaXguZG8uc3Ryb25nbG9' +
             'vcC5jb20vZXhlY3V0b3ItY29udHJvbCIsImJtU2VydmljZUluc3RhbmNlSWQiOi' +
-            'JkNTVmNzQ0ZC02NDgxLTRiMmItODhiZi03NDk4MmIwZjVmZWYifQ=='
-        }
-      }
-    ]
+            'JkNTVmNzQ0ZC02NDgxLTRiMmItODhiZi03NDk4MmIwZjVmZWYifQ==',
+        },
+      },
+    ],
   });
 
   t.test('Wrapper parses addon-info', function(t) {

@@ -33,7 +33,7 @@ function registerContainer(WebsocketChannel, addonInfo, callback) {
         os: {
           platform: os.platform(),
           arch: os.arch(),
-          release: os.release()
+          release: os.release(),
         },
         node: process.version,
         container: {
