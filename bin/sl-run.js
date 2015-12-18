@@ -3,8 +3,7 @@
 var WebsocketChannel = require('strong-control-channel/ws-channel');
 var debug = require('debug')('strong-heroku-runner');
 var os = require('os');
-var agentVersion =
-  require('strong-supervisor/node_modules/strong-agent/package.json').version;
+var agentVersion = require('strong-supervisor/lib/agent')().version;
 var supervisorVersion = require('strong-supervisor/package.json').version;
 var version = require('../package.json').version;
 
