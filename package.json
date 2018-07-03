@@ -8,7 +8,9 @@
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore . && jscs .",
     "test": "tap --coverage --bail --coverage-report=cobertura --timeout=200 test/test-*.*",
-    "posttest": "tap --coverage-report=text"
+    "posttest": "tap --coverage-report=text",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,14 @@
   "dependencies": {
     "debug": "^2.2.0",
     "strong-control-channel": "^2.x",
-    "strong-supervisor": "git://github.com/strongloop/strong-supervisor.git#spike/heroku"
+    "strong-supervisor": "git://github.com/strongloop/strong-supervisor.git#spike/heroku",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "eslint": "^1.x",
     "eslint-config-strongloop": "^1.x",
     "jscs": "^2.1.1",
     "tap": "^1.3.4"
-  }
+  },
+  "snyk": true
 }
